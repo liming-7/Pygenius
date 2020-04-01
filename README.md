@@ -3,21 +3,21 @@ The python general negotion platform for researchers.
 
 ### Development Process
 **Core**
-- [] Core Agent(Negotiator) info.
-- [] Core domain, issue, value class.
-- [] Core protocol, SAOP and Mediator interface.
-- [] Core action (Accept, Leave, ). 
-- [] xml2json parser: This is to transfer xml domain to json.
-- [] logging, visualize, checkpoint.
+- [ ] Core Agent(Negotiator) info.
+- [ ] Core domain, issue, value class.
+- [ ] Core protocol, SAOP and Mediator interface.
+- [ ] Core action (Accept, Leave, ). 
+- [ ] xml2json parser: This is to transfer xml domain to json.
+- [ ] logging, visualize, checkpoint.
 
 **Library**
-- [] Analysis Library, given the domain and Analysis the features of the domain.
-- [] Strategy Library, 1. Reuse genius ANAC library(use Py4j?)  2. Offer space for following strategies in ANAC.
-- [] Protocol Library, protocol mainly 
+- [ ] Analysis Library, given the domain and Analysis the features of the domain.
+- [ ] Strategy Library, 1. Reuse genius ANAC library(use Py4j?)  2. Offer space for following strategies in ANAC.
+- [ ] Protocol Library, protocol mainly 
 
 
 **Intergrate to GeniusWeb**
-- [] Flask Server using our framework, which can be a strategy server of GeniusWeb.
+- [ ] Flask Server using our framework, which can be a strategy server of GeniusWeb.
 
 
 ### Features
