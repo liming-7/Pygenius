@@ -4,12 +4,37 @@
 # @FileName: issuevalue.py
 # @Software: PyCharm
 
+# 1. Note that in this version, the number value is not continuous, transfer to [high, low, stepsize] format.
+# Might have bug when the value size is too big.
+# 2. json deserialize and serialize function are not implement yet.
+
 import re
 from typing import Any, Callable, Dict, List, Optional, Set, Union
 
+class Value:
+    pass
+
+class ValueSet:
+
+    def __init__(self):
+        pass
+
+
+class DiscreteValue(Value):
+    pass
+
+class DiscreteValueSet(ValueSet):
+    pass
+
+class NumberValue(Value):
+    pass
+
+class NumeberValueSet(ValueSet):
+    pass
+
 class Domain:
 
-    def __init__(self, domainName: str, issueValueSet: dict):
+    def __init__(self, domainName: str, issueValueSet):
         if domainName == None:
             raise ValueError("Domain name is none!")
 
@@ -23,6 +48,8 @@ class Domain:
         for issue in issueValueSet:
             if issueValueSet[issue] == None:
                 raise ValueError('valueset of '+ issue + ' is Empty!')
+            if not isinstance(issueValueSet, ValueSet):
+                raise TypeError('require a ValueSet!')
 
         self.name = domainName
         self.issueValueSet = issueValueSet
@@ -30,12 +57,15 @@ class Domain:
     def toString(self):
         return 'Domain[' + self.name + ',' + self.issueValueSet + ']'
 
+    @property
     def getName(self):
         return self.name
 
+    @property
     def getIssues(self):
         return list(self.issueValueSet)
 
+    @property
     def getValueSet(self, issue: str): #可以加一个判断
         return self.issueValueSet[issue]
 
@@ -53,32 +83,13 @@ class Domain:
 
         return True
 
-    def hashCode(self):
+    def __hash__(self):
         pass
 
-    def equals(self):
+    def __eq__(self, other):
         pass
 
-class Issue: #seems not necessary
-    pass
 
-class Value:
-    pass
-
-class ValueSet:
-    pass
-
-class DiscreteValue(Value):
-    pass
-
-class DiscreteValueSet(ValueSet):
-    pass
-
-class NumberValue(Value):
-    pass
-
-class NumeberValueSet(ValueSet):
-    pass
 
 class Bid:
 
@@ -93,9 +104,11 @@ class Bid:
 
         self.issuevalue = issuevalues
 
+    @property
     def getIssues(self):
         return list(self.issuevalue)
 
+    @property
     def getIssueNum(self):
         return len(self.issuevalue)
 
@@ -116,13 +129,18 @@ class Bid:
     def toString(self):
         pass
 
-    def hashCode(self):
+    def __hash__(self):
         pass  #hascode is to verify the unique of a bid.
 
     # partial bid not defined yet.
+    def __eq__(self, other):
+        pass
 
-    def equals(self, bid):
-        if isinstance(bid, Bid):
-            return self.issuevalue == bid.issuevalue
-        else:
-            raise TypeError('input is not a bid!')
+    # def equals(self, bid):
+    #     if isinstance(bid, Bid):
+    #         return self.issuevalue == bid.issuevalue
+    #     else:
+    #         raise TypeError('input is not a bid!')
+
+def loadDomain(domainfile):
+    pass

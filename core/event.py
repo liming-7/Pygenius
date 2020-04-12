@@ -4,4 +4,4 @@
 # @FileName: event.py
 # @Software: PyCharm
 
-# deine the negotiation event.
+# deine the negotiation event. 主要为了实际negotiation节点的event。
