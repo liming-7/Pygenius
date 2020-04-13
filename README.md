@@ -27,4 +27,5 @@ The python general negotion platform for researchers.
 4. Protocol: Bilateral and Mediator based. The we offer flexible mediator API, users can write their mediator(actor). This is mainly for the actor-critc method of reinforcement learning, can help us develop cooperate strategy and open research area of many new fields of multi-agent (Deep reinforcement learning), such as Credit assignment, adhoc team play, self-play...
 5. Basic Strategy Library: Offer basic strategy. User can use API.
 6. Standard Negotiation test domain Library: Offer the general test domain for negotiation agents.
-7. Offer peer simulator function, consider the network cost and time cost in real world.(Not quite sure) 
+7. Offer peer simulator function, consider the network cost and time cost in real world.(Not quite sure)
+8. The domain, utilitysapce, utilityfunction can not only load from related profile, but also also be defined in the program.

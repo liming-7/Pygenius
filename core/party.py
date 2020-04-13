@@ -7,43 +7,70 @@
 import re
 from typing import Any, Callable, Dict, List, Optional, Set, Union
 
+from core.action import *
+
 protocol_Set = Set[str]
 
-class Capabilities:
 
-    def __init__(self, protocol: protocol_Set):
-        '''
+class Strategy:
+    pass
 
-        :param protocol: Set of supported protocols.
-        '''
-        if protocol == None:
-            raise ValueError('suppoeted protocol is None!')
-        self.supportProtocol = protocol
 
-    def getSupportProtocol(self) -> protocol_Set:
-        return self.supportProtocol
+class UtilitySpace:
+    pass
 
-    def hasCode(self):
-        pass
-
-    def equals(self):
-        pass
 
 class Party:
     '''
     the basic party
     '''
-    def __init__(self):
-        pass
+
+    def __init__(self, name, capabilities: protocol_Set):
+        if not isinstance(name, str):
+            raise TypeError('input name should be string but got ' + str(type(name)))
+        if not re.match('[a-zA-Z]\\w*', name):
+            raise ValueError('name ' + name +
+                             ' is not a letter followed by zero or more word characters (letter, digit or _)')
+        if capabilities is None:
+            raise ValueError('suppoeted protocol is None!')
+
+
+        self.name = name
+        self.supprotocol = capabilities
+
+    def setStrategy(self, strategy):
+        self.strategy = strategy
+
+    def setUtilitySpace(self, utilityspace):
+        self.utilitySpace = utilityspace
+
+    def setDescription(self, des: str):
+        self.description = des
+
+    def getDescription(self):
+        return self.description
+
+    def getName(self):
+        return self.name
+
+    def getCapabilities(self):
+        return self.supprotocol
+
 
 class SimulateParty(Party):
     '''
     use in algorithm simulation
     '''
-    pass
+
+    def __init__(self, name, capabilities):
+        super().__init__(name, capabilities)
+
 
 class WebParty(Party):
     '''
     use in real negotiation nodes via Web service
     '''
-    pass
+    def __init__(self, name, capabilities):
+        super().__init__(name, capabilities)
+
+    def seril
