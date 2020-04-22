@@ -58,6 +58,8 @@ class UtilitySpace:
     def getIssueWeights(self):
         return self._issueWeights
 
+    #TODO:增加Bid的calculation
+
 
 if __name__ == '__main__':
     f = open("jobs2.json")
