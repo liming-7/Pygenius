@@ -48,7 +48,7 @@ class UtilitySpace:
 
     def getDomain(self):
         return self._domain
-
+ 
     def getIssueUtilities(self) -> list:
         return self._issueUtilities
 
@@ -58,7 +58,8 @@ class UtilitySpace:
     def getIssueWeights(self):
         return self._issueWeights
 
-    #TODO:增加Bid的calculation
+    #TODO 增加Bid的calculation
+    #TODO
 
 
 if __name__ == '__main__':

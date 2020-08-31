@@ -9,8 +9,8 @@ class Domain:
             self._issuesValue = json["issuesValues"]
         except:
             print("Domain value format error!")
-    def getName(self) -> str:
+    def get_name(self) -> str:
         return self._name
 
-    def getIssueValues(self) -> dict:
+    def get_issue_values(self) -> dict:
         return self._issuesValue

@@ -18,12 +18,12 @@ protocol_Set = Set[str]
 class Strategy:
     # All strategy should have this
     def __init__(self):
-        self.checkComplement()
+        self.check_complement()
 
-    def chooseAction(self):
+    def choose_action(self):
         pass
 
-    def checkComplement(self): #查找是否有chooseAction这个函数，或者一些其他函数。
+    def check_complement(self): #查找是否有chooseAction这个函数，或者一些其他函数。
         pass
 
 
@@ -36,7 +36,7 @@ class Party:
     the basic party
     '''
 
-    def __init__(self, name, capabilities: protocol_Set, strategy = None, utilityspace = None):
+    def __init__(self, name, capabilities: protocol_Set, strategy = None, utility_space = None):
         if not isinstance(name, str):
             raise TypeError('input name should be string but got ' + str(type(name)))
         if not re.match('[a-zA-Z]\\w*', name):
@@ -48,24 +48,24 @@ class Party:
         self.name = name
         self.supprotocol = capabilities
         self.strategy = strategy
-        self.utilitySpace = utilityspace
+        self.utility_space = utility_space
 
-    def setStrategy(self, strategy):
+    def set_strategy(self, strategy):
         self.strategy = strategy
 
-    def setUtilitySpace(self, utilityspace):
-        self.utilitySpace = utilityspace
+    def set_utility_space(self, utility_space):
+        self.utility_space = utility_space
 
-    def setDescription(self, des: str):
+    def set_description(self, des: str):
         self.description = des
 
-    def getDescription(self):
+    def get_description(self):
         return self.description
 
-    def getName(self):
+    def get_name(self):
         return self.name
 
-    def getCapabilities(self):
+    def get_capabilities(self):
         return self.supprotocol
 
 

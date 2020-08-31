@@ -21,8 +21,8 @@ class Profile:
 
     # Compare bid issue list and domain issue list, if they are same return True, if they are not same return false.
     def isComplete(self) -> bool:
-        if collections.Counter(self._domain.getIssueValues().keys()) == collections.Counter(
-                self._bid.getIssueValues().keys()):
+        if collections.Counter(self._domain.get_issue_values().keys()) == collections.Counter(
+                self._bid.get_issue_values().keys()):
             return True
         else:
             return False

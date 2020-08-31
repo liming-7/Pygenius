@@ -9,20 +9,20 @@ class Bid:
         self._issueValues = issue_values
 
     # add another bid into the dictionary
-    def addBid(self, issue, value):
+    def add_bid(self, issue, value):
         self._issueValues.update({issue: value})
 
-    def getIssueValue(self, issue):
+    def get_issue_value(self, issue):
         return self._issueValues[issue]
 
-    def getIssueValues(self):
+    def get_issue_values(self):
         return self._issueValues
 
     def merge(self, other_bid):
-        other_bid_dict = other_bid.getIssueValues()
+        other_bid_dict = other_bid.get_issue_values()
         new_dict = self._issueValues
         new_dict = new_dict.update(other_bid_dict)
         return Bid(self, new_dict)
 
-    def containsIssue(self, issue):
+    def contains_issue(self, issue):
         return issue in self._issueValues.keys()
