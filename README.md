@@ -4,7 +4,7 @@ The python general negotion platform for researchers.
 ### Development Process
 **Core**
 - [ ] Core Agent(Negotiator) info. 
-- [ ] Core domain, issue, value class.
+- [x] Core domain, issue, value class.
 - [ ] Core protocol, SAOP and Mediator interface.
 - [ ] Core action (Accept, Leave, Offer.). 
 - [ ] xml2json parser: This is to transfer xml domain to json.
@@ -20,7 +20,7 @@ The python general negotion platform for researchers.
 - [ ] Enable Tensorboard. 
 
 
-### Features
+### Intend Features
 1. Easy install, can use 'pip install' same as other python package, like Pytorch. 
 2. Json based data format. Including message, domain, profile. The model(strategy) trained on PyGenius can be easily transfered to GeniusWeb. At the same time, we can write a adapter party on geniusweb to use the strategy write in Pygenius framework. 
 3. Users can easily use deep reinforcement learning to train a dynamic strategy. (Online training)
