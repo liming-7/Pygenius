@@ -3,15 +3,15 @@ The python general negotion platform for researchers.
 
 ### Development Process
 **Core**
-- [ ] Core Agent(Negotiator) info. 
+- [x] Core Agent(Negotiator) info. 
 - [x] Core domain, issue, value class.
 - [ ] Core protocol, SAOP and Mediator interface.
-- [ ] Core action (Accept, Leave, Offer.). 
-- [ ] xml2json parser: This is to transfer xml domain to json.
+- [x] Core action (Accept, Leave, Offer.). 
+- [x] xml2json parser: This is to transfer xml domain to json.
 - [ ] logging, visualize, checkpoint.
 
 **Library**
-- [ ] Analysis Library, given the domain and Analysis the features of the domain.
+- [x] Analysis Library, given the domain and Analysis the features of the domain.
 - [ ] Strategy Library, 1. Reuse genius ANAC library(use Py4j?)  2. Offer space for following strategies in ANAC.
 - [ ] Protocol Library, protocol mainly defines the way of the game/negotiation.   
 
